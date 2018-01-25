@@ -27,14 +27,17 @@ func guessNumberUsingBinaryTree(start : Int, limit: Int, pickedNumber: Int) -> I
     }
 }
 
+//If number not found return -1
 
 func searchArrayForDesiredNumber(start : Int, limit: Int, desiredNumber: Int, array: [Int]) -> Int {
     var min = start
     var max = limit
     let average : Int =  (min + max) / 2
     
-    
-    if array[average] > desiredNumber  {
+    if  max == min {
+        return -1
+    }
+    else if array[average] > desiredNumber  {
         max = average - 1
         
         return searchArrayForDesiredNumber(start: min, limit: max, desiredNumber: desiredNumber, array:  array)
@@ -43,12 +46,12 @@ func searchArrayForDesiredNumber(start : Int, limit: Int, desiredNumber: Int, ar
         min = average + 1
         
         return searchArrayForDesiredNumber(start: min, limit : max,  desiredNumber : desiredNumber, array: array)
-    } else {
+    }
+    else {
         return average
     }
 }
 
 let primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97]
 
-//test example
-searchArrayForDesiredNumber(start: 0, limit: (primes.count - 1), desiredNumber: 67, array: primes)
+searchArrayForDesiredNumber(start: 0, limit: (primes.count - 1), desiredNumber: 10, array: primes)
