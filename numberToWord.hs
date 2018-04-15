@@ -22,5 +22,6 @@ digits x = go x []
         go number list = go (div number 10) (list ++ (:[]) (mod number 10))
                            
 wordNumber :: Int -> String
-wordNumber n = intercalate "-" $ map  digitToWord $ digits n
+{--wordNumber n = intercalate "-" $ map  digitToWord $ digits n --}
+wordNumber n = concat . intersperse "-" . map digitToWord . digits $ n
 
