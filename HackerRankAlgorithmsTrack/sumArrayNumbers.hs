@@ -4,18 +4,19 @@ module Main where
 
 import Control.Monad
 import Data.List
-import Data.List.Split
+---import Data.List.Split
 import Data.Set
 import System.Environment
 import System.IO
 
+
 --
 -- Complete the simpleArraySum function below.
 --
-simpleArraySum ar = do
-    --
-    -- Write your code here.
-    --
+mySum :: Num a => [a] -> a
+mySum [] = 0
+mySum (x : xs) = x + sum xs
+
 
 readMultipleLinesAsStringArray :: Int -> IO [String]
 readMultipleLinesAsStringArray 0 = return []
@@ -35,7 +36,7 @@ main = do
 
     let ar = Data.List.map (read :: String -> Int) . words $ arTemp
 
-    let result = simpleArraySum ar
+    let result = sum ar
 
     hPutStrLn fptr $ show result
 
