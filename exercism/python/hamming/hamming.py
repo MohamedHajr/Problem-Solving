@@ -1,2 +1,3 @@
 def distance(strand_a, strand_b):
-    pass
+    if len(strand_a) != len(strand_b) : raise ValueError('Wrong Length')
+    return sum([ x != y for x, y in zip(strand_a, strand_b)])
