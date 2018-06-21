@@ -1,1 +1,27 @@
-[]
+[
+  "bob/bob_test.py::BobTests::test_alternate_silence",
+  "bob/bob_test.py::BobTests::test_asking_a_numeric_question",
+  "bob/bob_test.py::BobTests::test_asking_a_question",
+  "bob/bob_test.py::BobTests::test_asking_gibberish",
+  "bob/bob_test.py::BobTests::test_ending_with_whitespace",
+  "bob/bob_test.py::BobTests::test_forceful_question",
+  "bob/bob_test.py::BobTests::test_multiple_line_question",
+  "bob/bob_test.py::BobTests::test_non_letters_with_question",
+  "bob/bob_test.py::BobTests::test_non_question_ending_with_whitespace",
+  "bob/bob_test.py::BobTests::test_only_numbers",
+  "bob/bob_test.py::BobTests::test_other_whitespace",
+  "bob/bob_test.py::BobTests::test_prattling_on",
+  "bob/bob_test.py::BobTests::test_prolonged_silence",
+  "bob/bob_test.py::BobTests::test_question_with_only_numbers",
+  "bob/bob_test.py::BobTests::test_shouting",
+  "bob/bob_test.py::BobTests::test_shouting_gibberish",
+  "bob/bob_test.py::BobTests::test_shouting_numbers",
+  "bob/bob_test.py::BobTests::test_shouting_with_no_exclamation_mark",
+  "bob/bob_test.py::BobTests::test_shouting_with_special_characters",
+  "bob/bob_test.py::BobTests::test_silence",
+  "bob/bob_test.py::BobTests::test_starting_with_whitespace",
+  "bob/bob_test.py::BobTests::test_statement_containing_question_mark",
+  "bob/bob_test.py::BobTests::test_stating_something",
+  "bob/bob_test.py::BobTests::test_talking_forcefully",
+  "bob/bob_test.py::BobTests::test_using_acronyms_in_regular_speech"
+]
