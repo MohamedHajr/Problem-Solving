@@ -1,33 +1,21 @@
-# Allergies
+# Space Age
 
-Given a person's allergy score, determine whether or not they're allergic to a given item, and their full list of allergies.
+Given an age in seconds, calculate how old someone would be on:
 
-An allergy test produces a single numeric score which contains the
-information about all the allergies the person has (that they were
-tested for).
+   - Earth: orbital period 365.25 Earth days, or 31557600 seconds
+   - Mercury: orbital period 0.2408467 Earth years
+   - Venus: orbital period 0.61519726 Earth years
+   - Mars: orbital period 1.8808158 Earth years
+   - Jupiter: orbital period 11.862615 Earth years
+   - Saturn: orbital period 29.447498 Earth years
+   - Uranus: orbital period 84.016846 Earth years
+   - Neptune: orbital period 164.79132 Earth years
 
-The list of items (and their value) that were tested are:
+So if you were told someone were 1,000,000,000 seconds old, you should
+be able to say that they're 31.69 Earth-years old.
 
-* eggs (1)
-* peanuts (2)
-* shellfish (4)
-* strawberries (8)
-* tomatoes (16)
-* chocolate (32)
-* pollen (64)
-* cats (128)
-
-So if Tom is allergic to peanuts and chocolate, he gets a score of 34.
-
-Now, given just that score of 34, your program should be able to say:
-
-- Whether Tom is allergic to any one of those allergens listed above.
-- All the allergens Tom is allergic to.
-
-Note: a given score may include allergens **not** listed above (i.e.
-allergens that score 256, 512, 1024, etc.).  Your program should
-ignore those components of the score.  For example, if the allergy
-score is 257, your program should only report the eggs (1) allergy.
+If you're wondering why Pluto didn't make the cut, go watch [this
+youtube video](http://www.youtube.com/watch?v=Z_2gbGXzFbs).
 
 ## Exception messages
 
@@ -47,11 +35,11 @@ raise Exception("Meaningful message indicating the source of the error")
 
 To run the tests, run the appropriate command below ([why they are different](https://github.com/pytest-dev/pytest/issues/1629#issue-161422224)):
 
-- Python 2.7: `py.test allergies_test.py`
-- Python 3.4+: `pytest allergies_test.py`
+- Python 2.7: `py.test space_age_test.py`
+- Python 3.4+: `pytest space_age_test.py`
 
 Alternatively, you can tell Python to run the pytest module (allowing the same command to be used regardless of Python version):
-`python -m pytest allergies_test.py`
+`python -m pytest space_age_test.py`
 
 ### Common `pytest` options
 
@@ -63,7 +51,7 @@ For other options, see `python -m pytest -h`
 
 ## Submitting Exercises
 
-Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/allergies` directory.
+Note that, when trying to submit an exercise, make sure the solution is in the `$EXERCISM_WORKSPACE/python/space-age` directory.
 
 You can find your Exercism workspace by running `exercism debug` and looking for the line that starts with `Workspace`.
 
@@ -72,7 +60,7 @@ please see [Running the Tests](http://exercism.io/tracks/python/tests).
 
 ## Source
 
-Jumpstart Lab Warm-up [http://jumpstartlab.com](http://jumpstartlab.com)
+Partially inspired by Chapter 1 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=01](http://pine.fm/LearnToProgram/?Chapter=01)
 
 ## Submitting Incomplete Solutions
 
