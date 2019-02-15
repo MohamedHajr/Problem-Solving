@@ -5,7 +5,7 @@ self.right (the right child of the node)
 self.data (the value of the node)
 """
 def preOrder(root):
-    if root != None :
+    if root :
         print root.data,
         preOrder(root.left)
         preOrder(root.right)
