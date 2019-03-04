@@ -2,15 +2,23 @@ class Node:
     def __init__(self, val=None, pointer=None):
         self.data = val
         self.next = pointer
-
-
+ 
 class LinkedList:
     def __init__(self):
         self.head = None
         self.current = None
+        self.size = 0
+
+    def appendFromHead(self, val):
+        newNode = Node(val, self.head)
+        self.head = newNode
+        self.size += 1
+        return self
 
     def append(self, val):
         newNode = Node(val)
+        self.size += 1
+
         if self.head == None:
             self.head = newNode
             self.current = newNode
@@ -29,6 +37,7 @@ class LinkedList:
         while current.next:
             if current.next.data == val:
                 current.next = current.next.next
+                self.size -= 1
                 return True
         return False
 
