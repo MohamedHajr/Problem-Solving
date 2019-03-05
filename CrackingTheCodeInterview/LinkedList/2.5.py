@@ -34,11 +34,11 @@ def sumLists(headA, headB):
 
 
 def getNodeResult(headA, headB, rem):
-    sm = headA.data + headB.data
+    sm = headA.data + headB.data + rem
     if sm >= 10:
-        return (sm - 10 + rem), 1
+        return (sm - 10), 1
     else:
-        return sm + rem, 0
+        return sm , 0
 
 
 first = LinkedList()
