@@ -6,6 +6,7 @@ class Node:
 class LinkedList:
     def __init__(self):
         self.head = None
+        self.tail = None
         self.current = None
         self.size = 0
 
@@ -18,10 +19,10 @@ class LinkedList:
     def append(self, val):
         newNode = Node(val)
         self.size += 1
+        self.tail = newNode
 
         if self.head == None:
             self.head = newNode
-            self.current = newNode
             return
 
         n = self.head
