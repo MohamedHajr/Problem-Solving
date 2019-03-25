@@ -5,9 +5,15 @@ class Node:
 
 
 class Stack:
-    def __init__(self):
+    def __init__(self, initArray = None):
         self.size = 0
         self.top = None
+
+        if initArray:
+            while len(initArray) > 0:
+                elem = initArray.pop()
+                self.push(elem)
+            print('finished................')
 
     def push(self, val):
         newNode = Node(val, self.top)
@@ -30,18 +36,21 @@ class Stack:
         return val
 
     def peek(self):
+        if self.isEmpty:
+            return -1
         return self.top.val
+
     def isEmpty(self):
         return self.size == 0
 
 
-stack = Stack()
-stack.push(5)
-stack.push(6)
-popped1 = stack.pop()
-popped2 = stack.pop()
-popped3 = stack.pop()
+# stack = Stack()
+# stack.push(5)
+# stack.push(6)
+# popped1 = stack.pop()
+# popped2 = stack.pop()
+# popped3 = stack.pop()
 
-print('suppose to be 6 -> ', popped1)
-print('suppose to be 5 -> ', popped2)
-print('suppose to be -1 -> ', popped3)
+# print('suppose to be 6 -> ', popped1)
+# print('suppose to be 5 -> ', popped2)
+# print('suppose to be -1 -> ', popped3)
