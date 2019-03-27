@@ -2,6 +2,7 @@
 
 import os
 import random
+from itertools import accumulate
 
 # Complete the arrayManipulation function below.
 def arrayManipulation(n, queries):

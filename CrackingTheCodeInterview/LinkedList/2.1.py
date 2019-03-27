@@ -1,13 +1,7 @@
 from LinkedList import LinkedList
 
-ll = LinkedList()
-ll.append(1)
-ll.append(2)
-ll.append(3)
-ll.append(2)
-ll.append(1)
-
-def deleteDuplicates(head=ll.head):
+#V1
+def deleteDuplicates(head):
     index = head
     while index.next:
         prev = index
@@ -22,6 +16,19 @@ def deleteDuplicates(head=ll.head):
                 curr = curr.next
         index = index.next
 
+
+def removeDup(head):
+    curr = head
+    while curr:
+        runner = curr
+        while runner.next:
+            if runner.next.data == curr.data:
+                runner.next = runner.next.next
+            else:
+                runner = runner.next
+        curr = curr.next
+
+#idk what is this, this is the kind of code you regret writing
 def iterateOver(head, k):
     last = None
     if head.next != None:
@@ -34,6 +41,26 @@ def iterateOver(head, k):
     if last == k:
         return head.data
     
-deleteDuplicates()
-for n in ll:
-    print('number -> ', n)
+
+
+
+# that only would works for characters
+def removeDuplicates(head):
+    bitVector = 0
+    if not head:
+        return head
+    bitVector |=  1 << ord(head.data) 
+    curr = head
+    while curr.next:
+        binary = 1 << ord(curr.next.data) 
+        if bitVector & binary > 0:
+            curr.next = curr.next.next
+        bitVector |= binary
+    return head
+
+ll = LinkedList()
+ll.append(1)
+ll.append('b')
+ll.append('c')
+ll.append('d')
+ll.append('x')
