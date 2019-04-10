@@ -1,0 +1,1 @@
+bst.insertRecursive(8)
