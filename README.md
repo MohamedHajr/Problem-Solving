@@ -8,3 +8,6 @@ Algorithms and Data Structures
 
 ### Algorithms
 - [most 100 used algorithms and data sturctures](https://discuss.codechef.com/t/data-structures-and-algorithms/6599) Code Chef
+
+### Rust
+- [Screen Cast to learn Rust](http://intorust.com)
