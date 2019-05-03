@@ -5,3 +5,6 @@ Algorithms and Data Structures
 
 ### Bit Manipulation
 - [Bit Twidling ](https://graphics.stanford.edu/~seander/bithacks.html) Bit Hacks
+
+### Algorithms
+- [most 100 used algorithms and data sturctures](https://discuss.codechef.com/t/data-structures-and-algorithms/6599) Code Chef
