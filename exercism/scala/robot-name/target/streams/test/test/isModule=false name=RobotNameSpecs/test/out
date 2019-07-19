@@ -1,0 +1,7 @@
+[0m[[0m[0minfo[0m] [0m[0m[32mRobotNameSpecs:[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m- has a name *** FAILED ***[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[31m  "YA27" did not fully match the regular expression [A-Z]{2}\d{3} (RobotNameTest.scala:10)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- does not change its name (pending)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- does not have the same name as other robots (pending)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- can have its name reset (pending)[0m[0m
+[0m[[0m[0minfo[0m] [0m[0m[33m- a large number of new instances have unique names !!! IGNORED !!![0m[0m
