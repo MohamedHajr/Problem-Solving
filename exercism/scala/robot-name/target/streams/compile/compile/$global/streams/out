@@ -1,7 +1,0 @@
-[0m[[0m[31merror[0m] [0m[0m/Users/mo/development/problemSolving/exercism/scala/robot-name/src/main/scala/Robot.scala:14:42: package scala.collection is not a value[0m
-[0m[[0m[31merror[0m] [0m[0m    def digits : String = digitsSpec.map(collection(Random.nextInt(collection.length)(_))).mkString[0m
-[0m[[0m[31merror[0m] [0m[0m                                         ^[0m
-[0m[[0m[31merror[0m] [0m[0m/Users/mo/development/problemSolving/exercism/scala/robot-name/src/main/scala/Robot.scala:14:79: object length is not a member of package collection[0m
-[0m[[0m[31merror[0m] [0m[0m    def digits : String = digitsSpec.map(collection(Random.nextInt(collection.length)(_))).mkString[0m
-[0m[[0m[31merror[0m] [0m[0m                                                                              ^[0m
-[0m[[0m[31merror[0m] [0m[0mtwo errors found[0m
