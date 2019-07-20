@@ -1,7 +1,7 @@
 .vscode
 .nyc_output
-*.metals
-*.idea
-*.blob
+**.metals
+**.idea
+**.blob
 **/target
 **/project
