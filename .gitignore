@@ -1,7 +1,11 @@
 .vscode
 .nyc_output
+
+
 **.metals
 **.idea
 **.bloob
 **/target
 **/project
+
+**.swp
