@@ -11,3 +11,6 @@ Algorithms and Data Structures
 
 ### Rust
 - [Screen Cast to learn Rust](http://intorust.com)
+
+### Podcast
+- [Corecusive](https://corecursive.com/)
