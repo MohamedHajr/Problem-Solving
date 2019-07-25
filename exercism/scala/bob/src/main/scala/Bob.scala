@@ -7,7 +7,6 @@ object Bob {
 
     val isQuestion =  filterdStatement.endsWith("?")
     val isYelling = filterdStatement.size > 2 && filterdStatement.forall(c => c.isUpper || c == '!' || c == '?') 
-    println(s"statement -> $filterdStatement, question -> $isQuestion, yelling -> $isYelling")
 
     (isQuestion, isYelling) match {
       case (true, true) => "Calm down, I know what I'm doing!"
