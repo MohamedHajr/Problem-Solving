@@ -14,3 +14,7 @@ Algorithms and Data Structures
 
 ### Podcast
 - [Corecusive](https://corecursive.com/)
+
+### Scala
+
+- [writing better scala](https://github.com/gstro/effective-scala)
