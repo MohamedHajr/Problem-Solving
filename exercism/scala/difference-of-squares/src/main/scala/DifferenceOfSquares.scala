@@ -1,8 +1,10 @@
 object DifferenceOfSquares {
+  def square(x: Int) = x * x
 
-  def sumOfSquares(n: Int): Int = (1 to n).map(math.pow(_, 2).toInt).sum
+  def sumOfSquares(n: Int): Int = (1 to n).map(square).sum
 
-  def squareOfSum(n: Int): Int = math.pow((1 to n).sum, 2).toInt
+  def squareOfSum(n: Int): Int = square((1 to n).sum)
 
   def differenceOfSquares(n: Int): Int = squareOfSum(n) - sumOfSquares(n)
+
 }
