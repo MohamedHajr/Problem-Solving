@@ -1,18 +1,15 @@
 object Bob {
   def response(statement: String): String = {
-    if(statement.trim == "") return "Fine. Be that way!"
+    val alphabit = ('a' to 'z') ++ ('A' to 'Z') 
+    def isQuestion(str: String) = str.endsWith("?")
+    def isYelling(str: String) = str.exists(alphabit.toSet) && str.forall(c => c.isUpper || !c.isLetter)
 
-    val filters = (('a' to 'z' toList) ::: ('A' to 'Z' toList) ::: ('?' :: '!' :: Nil)) toSet
-    val filterdStatement = statement.filter(filters)
-
-    val isQuestion =  filterdStatement.endsWith("?")
-    val isYelling = filterdStatement.size > 2 && filterdStatement.forall(c => c.isUpper || c == '!' || c == '?') 
-
-    (isQuestion, isYelling) match {
-      case (true, true) => "Calm down, I know what I'm doing!"
-      case (true, false) => "Sure."
-      case (false, true) => "Whoa, chill out!"
-      case (_, _) => "Whatever."
+    statement.trim match {
+      case str if str.isEmpty => "Fine. Be that way!"
+      case str if isQuestion(str) && isYelling(str) => "Calm down, I know what I'm doing!"
+      case str if isQuestion(str) => "Sure."
+      case str if isYelling(str) => "Whoa, chill out!"
+      case _ => "Whatever."
     }
   }
 }
