@@ -1,4 +1,7 @@
+import scala.annotation.tailrec
+
 object PrimeFactors {
+  @tailrec
   def factors(number: Long, xs: List[Long] = List(), curr: Long = 2): List[Long] = 
     number match {
       case 1 => xs
@@ -7,9 +10,7 @@ object PrimeFactors {
     }
 }
 
-import scala.annotation.tailrec
-
-case class PrimeFactors(){
+case class PrimeFactors() {
     private val primes : Stream[Long] = Stream.cons[Long](2, getNextPrimes(1))
 
     private def isPrime(n : Long) =
