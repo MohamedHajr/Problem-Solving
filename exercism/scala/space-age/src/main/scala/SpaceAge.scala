@@ -1,6 +1,6 @@
 object SpaceAge {
-  val earthOrbitalPeriod = 31557600
-  val plantsYears = Map(
+  val earthOrbitalPeriod: Double = 31557600
+  val plantsYears = Map[String, Double](
     "mercury" ->  0.2408467,
     "venus" ->  0.61519726,
     "mars" -> 1.8808158,
@@ -11,12 +11,15 @@ object SpaceAge {
     "earth" -> 1
   ) 
 
-  def onEarth(seconds: Double): Double = seconds / earthOrbitalPeriod 
-  def onMercury(seconds: Double): Double =  onEarth(seconds) / 0.2408467
-  def onVenus(seconds: Double): Double =  onEarth(seconds) / 0.61519726
-  def onMars(seconds: Double): Double =   onEarth(seconds) / 1.8808158
-  def onJupiter(seconds: Double): Double = onEarth(seconds) / 11.862615 
-  def onSaturn(seconds: Double): Double =  onEarth(seconds) / 29.447498 
-  def onUranus(seconds: Double): Double =  onEarth(seconds) / 84.016846
-  def onNeptune(seconds: Double): Double =  onEarth(seconds) / 164.79132
+  def calcYearsFor(seconds: Double, plant: String): Double = seconds / earthOrbitalPeriod / plantsYears(plant)
+
+  def onEarth(seconds: Double): Double = calcYearsFor(seconds, "earth")
+  def onMercury(seconds: Double): Double = calcYearsFor(seconds, "mercury")
+  def onVenus(seconds: Double): Double =  calcYearsFor(seconds, "venus")
+  def onMars(seconds: Double): Double =   calcYearsFor(seconds, "mars")
+  def onJupiter(seconds: Double): Double = calcYearsFor(seconds, "jupiter")
+  def onSaturn(seconds: Double): Double =  calcYearsFor(seconds, "saturn")
+  def onUranus(seconds: Double): Double =  calcYearsFor(seconds, "uranus")
+  def onNeptune(seconds: Double): Double = calcYearsFor(seconds, "neptune") 
+
 }
