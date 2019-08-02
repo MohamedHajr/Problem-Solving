@@ -18,3 +18,7 @@ Algorithms and Data Structures
 ### Scala
 
 - [writing better scala](https://github.com/gstro/effective-scala)
+
+### Functional Programming
+
+- [Functional Programming roadmap](https://hub.packtpub.com/a-five-level-learning-roadmap-for-functional-programmers/)
