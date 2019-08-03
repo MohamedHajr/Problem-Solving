@@ -8,15 +8,15 @@ case class Meetup(month: Int, year: Int) {
 
   lazy val startOfMonth = LocalDate.of(year, month, 1)
 
-  def day(dayOfWeek: Int, schedule: Schedule): LocalDate = {
-    lazy val first = startOfMonth.`with`(firstInMonth(DayOfWeek.of(dayOfWeek)))
+  def day(dayOfWeek: DayOfWeek, schedule: Schedule): LocalDate = {
+    lazy val first = startOfMonth.`with`(firstInMonth(dayOfWeek))
     schedule match {
-      case Schedule.Teenth => startOfMonth.withDayOfMonth(13).`with`(nextOrSame(DayOfWeek.of(dayOfWeek)))
+      case Schedule.Teenth => startOfMonth.withDayOfMonth(13).`with`(nextOrSame(dayOfWeek))
       case Schedule.First => first
       case Schedule.Second => first.plusDays(7)
       case Schedule.Third => first.plusDays(14)
       case Schedule.Fourth => first.plusDays(21)
-      case Schedule.Last => startOfMonth.`with`(lastInMonth(DayOfWeek.of(dayOfWeek)))
+      case Schedule.Last => startOfMonth.`with`(lastInMonth(dayOfWeek))
     }
   }
   
@@ -28,11 +28,11 @@ object Schedule extends Enumeration {
 }
 
 object Meetup {
-  val Mon = DayOfWeek.MONDAY.getValue
-  val Tue = DayOfWeek.TUESDAY.getValue
-  val Wed = DayOfWeek.WEDNESDAY.getValue
-  val Thu = DayOfWeek.THURSDAY.getValue
-  val Fri = DayOfWeek.FRIDAY.getValue
-  val Sat = DayOfWeek.SATURDAY.getValue
-  val Sun = DayOfWeek.SUNDAY.getValue
+  val Mon = DayOfWeek.MONDAY
+  val Tue = DayOfWeek.TUESDAY
+  val Wed = DayOfWeek.WEDNESDAY
+  val Thu = DayOfWeek.THURSDAY
+  val Fri = DayOfWeek.FRIDAY
+  val Sat = DayOfWeek.SATURDAY
+  val Sun = DayOfWeek.SUNDAY
 }
