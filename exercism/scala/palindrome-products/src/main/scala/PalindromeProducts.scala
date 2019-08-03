@@ -1,6 +1,5 @@
 import scala.annotation.tailrec
 case class PalindromeProducts(start: Int, end: Int) {
-  type Result = (Int, Set[(Int, Int)])
   def isPali(number: Int): Boolean = {
     @tailrec def reverse(n: Int, acc: Int = 0): Int = 
       if(n <= 0) acc
@@ -8,16 +7,20 @@ case class PalindromeProducts(start: Int, end: Int) {
     reverse(number) == number
   }
 
-  lazy val palindromes: List[Result] = {
-    (start to end).foldLeft(List[Result]()) {(acc, n) =>
-      val xs = (1 to n).foldLeft(Set[(Int, Int)]()){ (acc, x) => 
-        if(isPali(n * x)) acc.+((x, n))
-        else acc
-      } 
-      (n, xs) :: acc
-    }
-  }
+  lazy val palindromes = 
+    for {
+      i <- start to end
+      j <- i to end
+      if isPali(i * j)
+    } yield (i * j, (i, j))
+    
+  type Result = (Int, Set[(Int, Int)])
 
-  def smallest: Option[Result] = Some(palindromes.last)
-  def largest: Option[Result] = Some(palindromes.head)
+  def selectPalindrome(selection: (Int, Int) => Int): Option[Result] = for (
+      selected <- palindromes.map(_._1).reduceOption(selection(_, _));
+      factors = palindromes.collect{ case (product, factors) if product == selected => factors }.sorted.toSet
+    ) yield (selected, factors)
+    
+  def smallest: Option[Result] = selectPalindrome(math.min)
+  def largest: Option[Result] = selectPalindrome(math.max)
 }
