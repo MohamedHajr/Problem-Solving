@@ -1,7 +1,9 @@
 class School {
   type DB = Map[Int, Seq[String]]
 
-  var db: DB =  Map.empty
+  private var mutableDB = Map.empty
+
+  def db: DB = mutableDB 
 
   def add(name: String, g: Int) =  db += g -> (grade(g) :+ name)
 
