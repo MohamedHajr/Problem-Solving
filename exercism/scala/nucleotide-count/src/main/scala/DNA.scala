@@ -1,4 +1,6 @@
 case class DNA(dna: String) {
+// require(dna.replaceAll("A*T*C*G*", "").size == 0)
+
   def nucleotideCounts: Either[Unit, Map[Char, Int]] = dna match {
     case xs if xs == "" => Right(DNA.empty)
     case xs if xs.toSet.size > 4 => Left()
