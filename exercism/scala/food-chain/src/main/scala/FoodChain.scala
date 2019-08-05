@@ -21,11 +21,15 @@ object FoodChain {
     Nil
     
   
-  def constructVerses(verse: Int): String = "I know an old lady who swallowed a " ++ animals(verse) ++ "\n" ++ verses.take(verse).reverse.mkString("\n") ++ "\n\n"
+  def constructVerses(verse: Int): String = 
+    if(verse != 8)
+      "I know an old lady who swallowed a " ++ animals(verse) ++ "\n" ++ verses.take(verse).reverse.mkString("\n") ++ "\n\n" 
+    else
+      "I know an old lady who swallowed a " ++ animals(8) ++ "\n\n"
+
   def recite(start: Int, limit: Int): String = limit - start match {
-    case 0 if start != 8 => constructVerses(start)
-    case 0 if start == 8 => "I know an old lady who swallowed a " ++ animals(8) ++ "\n\n"
-    case x => constructVerses(x) ++ recite(start, limit - 1)
+    case 0 => constructVerses(start)
+    case _ => (start to limit).map(constructVerses).mkString
   }  
    
 }
