@@ -3,6 +3,8 @@ Algorithms and Data Structures
 
 ## **Resources**
 
+### Random
+- [Learning Regex](https://github.com/ziishaned/learn-regex)
 ### Bit Manipulation
 - [Bit Twidling ](https://graphics.stanford.edu/~seander/bithacks.html) Bit Hacks
 
