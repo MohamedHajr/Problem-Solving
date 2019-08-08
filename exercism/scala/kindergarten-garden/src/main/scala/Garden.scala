@@ -15,27 +15,23 @@ object Plant {
   }
 }
 
-case class Garden(rows: String) {
+case class Garden(rows: String, kids: Seq[String]) {
   import Plant.{Plant, letterToPlant}
 
   def extractAndTransform(row: String, drop: Int): List[Plant] = row.drop(drop).take(2).map(letterToPlant).toList
+
   def plants(child: String): List[Plant] = {
     val Array(row1, row2, _*) = rows.split("\n")
-    child match {
-      case "Alice" => extractAndTransform(row1, 0) ::: extractAndTransform(row2, 0)
-      case "Bob" => extractAndTransform(row1, 2) ::: extractAndTransform(row2, 2)
-      case "Charlie" => extractAndTransform(row1, 4) ::: extractAndTransform(row2, 4)
-      case "Kincaid" => extractAndTransform(row1, 20) ::: extractAndTransform(row2, 20)
-      case "Larry" => extractAndTransform(row1, 22) ::: extractAndTransform(row2, 22)
-    }
+    val startPosition = kids.indexOf(child) * 2
+    extractAndTransform(row1, startPosition) ::: extractAndTransform(row2, startPosition)
   }
 }
 
 object Garden {
-  private val kids = List(
+  private val kids = Array(
     "Alice", "Bob", "Charlie", "David",
     "Eve", "Fred", "Ginny", "Harriet",
     "Ileana", "Joseph", "Kincaid", "Larry"
   )
-  def defaultGarden(rows: String): Garden = new Garden(rows)
+  def defaultGarden(rows: String): Garden = new Garden(rows, kids)
 }
