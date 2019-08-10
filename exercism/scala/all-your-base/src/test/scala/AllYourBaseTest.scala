@@ -85,27 +85,22 @@ class AllYourBaseTest extends FunSuite with Matchers {
   }
 
   test("invalid positive digit") {
-    
     AllYourBase.rebase(2, List(1, 2, 1, 0, 1, 0), 10) should be(None)
   }
 
   test("output base is one") {
-    
     AllYourBase.rebase(2, List(1, 0, 1, 0, 1, 0), 1) should be(None)
   }
 
   test("output base is zero") {
-    
     AllYourBase.rebase(10, List(7), 0) should be(None)
   }
 
   test("output base is negative") {
-    
     AllYourBase.rebase(2, List(1), -7) should be(None)
   }
 
   test("both bases are negative") {
-    
     AllYourBase.rebase(-2, List(1), -7) should be(None)
   }
 }
