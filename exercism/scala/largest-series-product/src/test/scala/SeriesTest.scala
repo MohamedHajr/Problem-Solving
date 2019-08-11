@@ -76,7 +76,6 @@ class LargestSeriesProductTest extends FunSuite with Matchers {
   }
 
   test("rejects negative span") {
-    
     Series.largestProduct(-1, "12345") should be(None)
   }
 }
