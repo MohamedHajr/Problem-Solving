@@ -1,5 +1,5 @@
 object AtbashCipher {
-  def rotate(c: Char): Char = (122 - (c.asDigit - 10)).toChar 
+  def rotate(c: Char): Char = ('z' - (c - 'a')).toChar
   def encode(sentence: String): String = sentence
     .toLowerCase
     .filter(_.isLetterOrDigit)
