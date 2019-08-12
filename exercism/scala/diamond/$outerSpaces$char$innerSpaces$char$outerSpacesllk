@@ -7,7 +7,7 @@ object Diamond {
 
   def createRow(row: (Char, Int), totalLength: Int): String = {
     val (char, index) = row
-    val outerSpaces = "".padTo(totalLength - index - 1 , " ").mkString
+    val outerSpaces = "".padTo(totalLength - index - 1, " ").mkString
     val innerSpaces = "".padTo(if (index == 0) 0 else index * 2 - 1, " ").mkString
 
     drawRow(char, innerSpaces, outerSpaces)
@@ -15,11 +15,9 @@ object Diamond {
   
   def rows(char: Char): List[String] = {
     val upperChars = ('A' to char).zipWithIndex
-    val bottomChars = upperChars.reverse.tail
+    val diamondChars = upperChars ++ upperChars.reverse.tail
+    val length = diamondChars.size
 
-    val upper = upperChars map { createRow(_, upperChars.length) } toList 
-    val bottom = bottomChars.map{ createRow(_, upperChars.length) }.toList
-
-    upper ::: bottom
+    diamondChars map { createRow(_, diamondChars.length) } toList
   }
 }
