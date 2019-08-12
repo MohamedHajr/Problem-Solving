@@ -7,8 +7,8 @@ object Diamond {
 
   def createRow(row: (Char, Int), totalLength: Int): String = {
     val (char, index) = row
-    val outerSpaces = "".padTo(totalLength - index - 1 , " ").mkString
-    val innerSpaces = "".padTo(if (index == 0) 0 else index * 2 - 1, " ").mkString
+    val outerSpaces = " " * (totalLength - index - 1)
+    val innerSpaces = if (index == 0) "" else " " * (index * 2 - 1)
 
     drawRow(char, innerSpaces, outerSpaces)
   }
