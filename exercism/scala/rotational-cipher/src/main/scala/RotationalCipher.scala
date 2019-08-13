@@ -13,8 +13,8 @@ object RotationalCipher {
 
   def rotate(sentence: String, shifts: Int): String= sentence map {
     case char if char.isUpper => rotateCaptial(char, shifts)
-    case char if char.isLower=> rotateSmall(char, shifts)
-    case c => c
+    case char if char.isLower => rotateSmall(char, shifts)
+    case char => char
   } 
 
 }
