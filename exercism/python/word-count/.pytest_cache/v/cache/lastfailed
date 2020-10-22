@@ -1,1 +1,16 @@
-{}
+{
+  "word_count_test.py::WordCountTests": true,
+  "word_count_test.py::WordCountTests::test_apostrophes": true,
+  "word_count_test.py::WordCountTests::test_count_multiple_occurrences_of_a_word": true,
+  "word_count_test.py::WordCountTests::test_count_one_of_each": true,
+  "word_count_test.py::WordCountTests::test_count_one_word": true,
+  "word_count_test.py::WordCountTests::test_cramped_list": true,
+  "word_count_test.py::WordCountTests::test_expanded_list": true,
+  "word_count_test.py::WordCountTests::test_ignores_punctuation": true,
+  "word_count_test.py::WordCountTests::test_include_numbers": true,
+  "word_count_test.py::WordCountTests::test_multiple_spaces_not_detected_as_a_word": true,
+  "word_count_test.py::WordCountTests::test_non_alphanumeric": true,
+  "word_count_test.py::WordCountTests::test_normalize_case": true,
+  "word_count_test.py::WordCountTests::test_quotations": true,
+  "word_count_test.py::WordCountTests::test_tabs": true
+}

@@ -1,4 +1,8 @@
 def is_isogram(word):
+    cleanWord = word.lower().replace("-", "").replace(" ", "")
+    return len(cleanWord) == len(set(cleanWord))
+
+def is_isogram_v2(word):
   clean_word = word.lower()
   holder = []
 
