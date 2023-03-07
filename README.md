@@ -24,3 +24,8 @@ Algorithms and Data Structures
 ### Functional Programming
 
 - [Functional Programming roadmap](https://hub.packtpub.com/a-five-level-learning-roadmap-for-functional-programmers/)
+
+### Exercism Configuration
+exercism configure --token <my-token>
+exercism configure --workspace <path>
+exercism download --exercise=<exercise> --track=go 
